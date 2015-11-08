@@ -1,7 +1,7 @@
 // Create final store using all reducers and applying middleware
 
 // Redux utility functions
-import { compose, createStore, combineReducers, applyMiddleware } from 'redux';
+import { compose, createStore, combineReducers } from 'redux';
 // Redux DevTools store enhancers
 import { devTools, persistState } from 'redux-devtools';
 // Import all reducers

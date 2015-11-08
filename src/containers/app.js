@@ -13,7 +13,7 @@ class App extends Component {
     this.props.dispatch(loadApp());
   }
 
-  render () {
+  render() {
     return (
       <div></div>
     );
