@@ -14,3 +14,25 @@ Start a new application easily with all necessary tools
 * Redux DevTools
 * Eslint
 * Karma w Mocha & Chai
+* Express
+
+## Installation
+
+```
+git clone https://github.com/werein/react.git
+```
+
+## Keep it up to date
+
+Track this repo
+
+```
+git remote add upstream https://github.com/werein/react.git
+```
+
+Rebase on the latest version
+
+```
+git fetch upstream
+git rebase upstream/master
+```
