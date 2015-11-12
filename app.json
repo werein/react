@@ -1,0 +1,18 @@
+{
+  "name": "react",
+  "description": "A React app using Express",
+  "keywords": [
+    "node",
+    "react",
+    "express"
+  ],
+  "website": "https://wereinhq.com/guides/react",
+  "repository": "https://github.com/werein/react",
+  "success_url": "/",
+  "env": {
+    "PORT": {
+      "description": "Port on which express is running.",
+      "value": "443"
+    }
+  }
+}
