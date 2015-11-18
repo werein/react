@@ -29,6 +29,11 @@ module.exports = function(options) {
     var jsLoaderPlugins = null;
   };
 
+  var cssLoader = 'style-loader!css-loader?modules&localIdentName=[path]-[local]-[hash:base64]';
+  var scssLoader = cssLoader + '!sass';
+  var sassLoader = scssLoader + '?indentedSyntax=sass';
+  var lessLoader = cssLoader + '!less';
+
   return {
     context: __dirname + '/src',
     entry: {
@@ -54,14 +59,11 @@ module.exports = function(options) {
           },
           plugins: [jsLoaderPlugins]
         },
-        {
-          test: /\.css$/,
-          loader: 'style-loader!css-loader?modules&localIdentName=[hash:base64]',
-        },
-        {
-          test: /\.html$/,
-          loader: 'file?name=[name].[ext]'
-        }
+        { test: /\.css$/, loader: cssLoader },
+        { test: /\.scss$/, loader: scssLoader },
+        { test: /\.sass$/, loader: sassLoader },
+        { test: /\.less$/, loader: lessLoader },
+        { test: /\.html$/, loader: 'file?name=[name].[ext]' }
       ]
     },
   }
