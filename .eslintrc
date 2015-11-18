@@ -2,5 +2,8 @@
   "extends": "airbnb",
   "rules": {
     "comma-dangle": 0
+  },
+  "globals": {
+    "__DEV__": true
   }
 }

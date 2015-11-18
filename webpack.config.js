@@ -1,5 +1,12 @@
+const webpack = require('webpack');
+
 module.exports = function(options) {
   if(options.development){
+    // definePlugin takes raw strings and inserts them, so you can put strings of JS if you want.
+    // Set __DEV__ from NODE_ENV or true in development mode
+    var definePlugin = new webpack.DefinePlugin({
+      __DEV__: JSON.stringify(JSON.parse(process.env.NODE_ENV == 'development' || 'true'))
+    });
     // Use React transformer for hot reloading
     var jsLoaderPlugins = ['react-transform', {
       transforms: [
@@ -14,6 +21,10 @@ module.exports = function(options) {
       ],
     }];
   } else {
+    // Set __DEV__ from NODE_ENV or false in production mode
+    var definePlugin = new webpack.DefinePlugin({
+      __DEV__: JSON.stringify(JSON.parse(process.env.NODE_ENV == 'development' || 'false'))
+    });
     // Don't load another plugins for JS files
     var jsLoaderPlugins = null;
   };
