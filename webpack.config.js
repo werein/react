@@ -66,5 +66,8 @@ module.exports = function(options) {
         { test: /\.html$/, loader: 'file?name=[name].[ext]' }
       ]
     },
+    devServer: {
+      historyApiFallback: true,
+    }
   }
 };
