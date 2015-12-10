@@ -18,7 +18,7 @@
   "license": "ISC",
   "devDependencies": {
     "babel-eslint": "^5.0.0-beta4",
-    "babel-plugin-react-transform": "github:thejameskyle/babel-plugin-react-transform#tjk/babel-6",
+    "babel-plugin-react-transform": "^2.0.0-beta1",
     "chai": "^3.4.1",
     "eslint": "^1.10.3",
     "eslint-config-airbnb": "^2.0.0",
