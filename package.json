@@ -49,7 +49,7 @@
     "react-redux": "^4.0.0",
     "react-router": "^1.0.1",
     "redux": "^3.0.4",
-    "redux-router": "^1.0.0-beta5",
+    "redux-simple-router": "^1.0.0",
     "style-loader": "^0.13.0",
     "webpack": "^1.12.9"
   }
