@@ -27,8 +27,8 @@ export const store = compose(
     routes,
     createHistory
   }),
-  // Provides support for DevTools:
-  devTools()
+  // Provides support for DevTools via Chrome extension
+  window.devToolsExtension ? window.devToolsExtension() : f => f
 )(createStore)(reducer);
 
 export default store;
