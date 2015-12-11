@@ -22,6 +22,9 @@ Start a new application easily with all necessary tools
 git clone https://github.com/werein/react.git
 ```
 
+### Tools
+This project works with ReduxDevtool extension for chrome. [Read more](https://github.com/zalmoxisus/redux-devtools-extension)
+
 ## Keep it up to date
 
 Track this repo
