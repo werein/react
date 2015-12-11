@@ -2,8 +2,6 @@
 
 // Redux utility functions
 import { compose, createStore, combineReducers } from 'redux';
-// Redux DevTools store enhancers
-import { devTools, persistState } from 'redux-devtools';
 // Import all reducers
 import * as reducers from '../reducers';
 // Import routes form routes file
@@ -21,8 +19,6 @@ const reducer = combineReducers({...reducers, router: routerStateReducer});
 export const store = compose(
   // Enables your middleware:
   // applyMiddleware(thunk), // any Redux middleware, e.g. redux-thunk
-  // Lets you write ?debug_session=<name> in address bar to persist debug sessions
-  persistState(window.location.href.match(/[?&]debug_session=([^&]+)\b/)),
   reduxReactRouter({
     routes,
     createHistory
