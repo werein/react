@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import { loadApp } from '../actions/app';
 
-class App extends Component {
+export class App extends Component {
   static propTypes = {
     dispatch: PropTypes.func,
     loaded: PropTypes.bool

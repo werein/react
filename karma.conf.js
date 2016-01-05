@@ -1,6 +1,5 @@
 // Karma configuration
 // Generated on Sun Nov 08 2015 01:28:28 GMT+0100 (CET)
-var webpackConfig = require('./webpack.config.js')({});
 
 module.exports = function(config) {
   config.set({
@@ -38,7 +37,37 @@ module.exports = function(config) {
       'karma-phantomjs-launcher'
     ],
 
-    webpack: webpackConfig,
+    webpack: {
+      devtool: 'inline-source-map',
+      module: {
+        loaders: [
+          {
+            test: /\.js$/,
+            exclude: /node_modules/,
+            loader: 'babel',
+            query: {
+              presets: ['react', 'es2015', 'stage-0']
+            }
+          },
+          {
+            test: /sinon\.js$/,
+            loader: 'imports?define=>false,require=>false'
+          }
+        ]
+      },
+      resolve: {
+        alias: {
+          sinon: 'sinon/pkg/sinon'
+        }
+      },
+      externals: {
+        jsdom: 'window',
+        cheerio: 'window',
+        'react/lib/ExecutionEnvironment': true,
+        'react/lib/ReactContext': 'window',
+        'text-encoding': 'window'
+      }
+    },
 
     webpackMiddleware: {
       noInfo: true,
