@@ -13,7 +13,7 @@ Start a new application easily with all necessary tools
 * Redux Router
 * Redux DevTools
 * Eslint
-* Enzyme power by karma w Mocha & Chai
+* Enzyme powered by karma w Mocha & Chai
 * Express
 
 ## Installation
