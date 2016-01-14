@@ -21,7 +21,7 @@ module.exports = {
     filename: '[hash].js',
     path: __dirname + '/dist'
   },
-  devtool: 'cheap-module-source-map',
+  devtool: 'source-map',
   debug: false,
   plugins: [ stylesheetsPlugin, htmlWebpackPlugin, definePlugin, dedupePlugin, uglifyPlugin ],
   module: {
