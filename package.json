@@ -6,7 +6,7 @@
     "start": "webpack-dev-server --config ./webpack.development.js  --progress --inline --hot",
     "test": "karma start karma.conf.js",
     "postinstall": "npm run build",
-    "build": "rm -rf dist && webpack --config ./webpack.production.js --progress --profile --colors",
+    "build": "webpack --config ./webpack.production.js --progress --profile --colors",
     "production": "node server",
     "eslint": "eslint ."
   },
