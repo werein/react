@@ -6,6 +6,6 @@ import { store } from '../../store';
 describe('<App />', () => {
   it('renders <App /> container', () => {
     const wrapper = shallow(<App store={store} />);
-    expect(wrapper.contains(<div></div>)).to.be.true;
+    expect(wrapper.find('div')).to.have.length(1);
   });
 });

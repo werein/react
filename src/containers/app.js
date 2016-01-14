@@ -15,7 +15,7 @@ export class App extends Component {
 
   render() {
     return (
-      <div></div>
+      <div className={styles.container}></div>
     );
   }
 }
