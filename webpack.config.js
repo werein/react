@@ -1,6 +1,9 @@
 const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = function(options) {
+  var cssPlugin = new ExtractTextPlugin('[hash].css');
   if(options.development){
     // definePlugin takes raw strings and inserts them, so you can put strings of JS if you want.
     // Set __DEV__ from NODE_ENV or true in development mode
@@ -20,6 +23,10 @@ module.exports = function(options) {
         },
       ],
     }];
+
+    var htmlWebpackPlugin = new HtmlWebpackPlugin({
+      template: './src/index.html',
+    });
   } else {
     // Set __DEV__ from NODE_ENV or false in production mode
     var definePlugin = new webpack.DefinePlugin({
@@ -27,26 +34,28 @@ module.exports = function(options) {
     });
     // Don't load another plugins for JS files
     var jsLoaderPlugins = null;
+
+    var htmlWebpackPlugin = new HtmlWebpackPlugin({
+      template: './src/index.html',
+      production: true,
+    });
   };
 
-  var cssLoader = 'style-loader!css-loader?modules&localIdentName=[path]-[local]-[hash:base64]';
+  var cssLoader = ExtractTextPlugin.extract('style-loader', '!css-loader?modules&localIdentName=[path]-[local]-[hash:base64]');
   var scssLoader = cssLoader + '!sass';
   var sassLoader = scssLoader + '?indentedSyntax=sass';
   var lessLoader = cssLoader + '!less';
 
   return {
     context: __dirname + '/src',
-    entry: {
-      javascript: './index.js',
-      html: './index.html'
-    },
+    entry: './index',
     output: {
-      filename: 'app.js',
+      filename: '[hash].js',
       path: __dirname + '/dist'
     },
     devtool: options.devtool || 'eval',
     debug: options.debug || true,
-    plugins: [ definePlugin ],
+    plugins: [ definePlugin, htmlWebpackPlugin, cssPlugin ],
     module: {
       loaders: [
         {
