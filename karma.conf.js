@@ -52,6 +52,10 @@ module.exports = function(config) {
           {
             test: /sinon\.js$/,
             loader: 'imports?define=>false,require=>false'
+          },
+          {
+            test: /\.(css|scss|sass|less)$/,
+            loader: 'null',
           }
         ]
       },
