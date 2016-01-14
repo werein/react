@@ -7,7 +7,7 @@ export class App extends Component {
   static propTypes = {
     dispatch: PropTypes.func,
     loaded: PropTypes.bool
-  }
+  };
 
   componentDidMount() {
     this.props.dispatch(loadApp());
