@@ -1,30 +1,31 @@
 // Create final store using all reducers and applying middleware
 
 // Redux utility functions
-import { compose, createStore, combineReducers } from 'redux';
+import { compose, createStore, combineReducers, applyMiddleware } from 'redux';
 // Import all reducers
 import * as reducers from '../reducers';
 // Import routes form routes file
 import { routes } from '../routes';
 // Import SimpleReduxRouter
-import { syncReduxAndRouter, routeReducer } from 'redux-simple-router'
-import { createHistory } from 'history';
+import { syncHistory, routeReducer } from 'redux-simple-router'
+import { browserHistory } from 'react-router';
 
 // Configure reducer to store state at state.router
 // You can store it elsewhere by specifying a custom `routerStateSelector`
 // in the store enhancer below
 const reducer = combineReducers({...reducers, routing: routeReducer});
+const reduxRouterMiddleware = syncHistory(browserHistory);
 
-// Compose reduxReactRouter with other store enhancers
-export const history = createHistory();
 export const store = compose(
   // Enables your middleware:
   // applyMiddleware(thunk), // any Redux middleware, e.g. redux-thunk
+  applyMiddleware(reduxRouterMiddleware),
 
   // Provides support for DevTools via Chrome extension
   window.devToolsExtension ? window.devToolsExtension() : f => f
 )(createStore)(reducer);
 
-syncReduxAndRouter(history, store);
+// Required for replaying actions from devtools to work
+reduxRouterMiddleware.listenForReplays(store);
 
 export default store;
