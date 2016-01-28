@@ -6,41 +6,25 @@ const stylesheetsLoader = ExtractTextPlugin.extract('style-loader', '!css-loader
 const stylesheetsPlugin = new ExtractTextPlugin('[hash].css');
 const htmlWebpackPlugin = new HtmlWebpackPlugin({ template: 'index.html' });
 const definePlugin = new webpack.DefinePlugin({
-  __DEV__: JSON.stringify(JSON.parse(process.env.NODE_ENV == 'development' || 'true'))
+  __DEV__: JSON.stringify(JSON.parse(process.env.NODE_ENV === 'development' || 'true'))
 });
 
 module.exports = {
-  context: __dirname + '/src',
+  context: `${__dirname}/src`,
   entry: './index',
   output: {
     filename: '[hash].js',
-    path: __dirname + '/dist'
+    path: `${__dirname}/dist`
   },
   devtool: 'eval',
   debug: true,
-  plugins: [ stylesheetsPlugin, htmlWebpackPlugin, definePlugin ],
+  plugins: [stylesheetsPlugin, htmlWebpackPlugin, definePlugin],
   module: {
     loaders: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel',
-        query:
-        {
-          presets:['react', 'es2015', 'stage-0']
-        },
-        plugins: ['react-transform', {
-          transforms: [
-            {
-              transform: 'react-transform-hmr',
-              imports: ['react'],
-              locals: ['module'],
-            }, {
-              transform: 'react-transform-catch-errors',
-              imports: ['react', 'redbox-react'],
-            },
-          ]
-        }]
+        loader: 'babel'
       },
       { test: /\.css$/, loader: stylesheetsLoader },
       { test: /\.scss$/, loader: `${stylesheetsLoader}'!sass` },

@@ -4,16 +4,14 @@
 import { compose, createStore, combineReducers, applyMiddleware } from 'redux';
 // Import all reducers
 import * as reducers from '../reducers';
-// Import routes form routes file
-import { routes } from '../routes';
 // Import SimpleReduxRouter
-import { syncHistory, routeReducer } from 'redux-simple-router'
+import { syncHistory, routeReducer } from 'redux-simple-router';
 import { browserHistory } from 'react-router';
 
 // Configure reducer to store state at state.router
 // You can store it elsewhere by specifying a custom `routerStateSelector`
 // in the store enhancer below
-const reducer = combineReducers({...reducers, routing: routeReducer});
+const reducer = combineReducers({ ...reducers, routing: routeReducer });
 const reduxRouterMiddleware = syncHistory(browserHistory);
 
 export const store = compose(
