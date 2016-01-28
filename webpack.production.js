@@ -4,7 +4,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const stylesheetsLoader = ExtractTextPlugin.extract('style-loader', '!css-loader?modules&localIdentName=[hash:base64]');
 const stylesheetsPlugin = new ExtractTextPlugin('[hash].css');
-const htmlWebpackPlugin = new HtmlWebpackPlugin({ template: './src/index.html', production: true });
+const htmlWebpackPlugin = new HtmlWebpackPlugin({ template: 'index.html' });
 const definePlugin = new webpack.DefinePlugin({
   __DEV__: JSON.stringify(JSON.parse(process.env.NODE_ENV == 'development' || 'false')),
   'process.env': {
@@ -39,7 +39,7 @@ module.exports = {
       { test: /\.scss$/, loader: `${stylesheetsLoader}'!sass` },
       { test: /\.sass$/, loader: `${stylesheetsLoader}'!sass?indentedSyntax=sass` },
       { test: /\.less$/, loader: `${stylesheetsLoader}'!less` },
-      { test: /\.html$/, loader: 'file?name=[name].[ext]' }
+      { test: /\.html$/, loader: 'html-loader' }
     ]
   }
 };
