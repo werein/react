@@ -59,6 +59,6 @@
     "redux": "^3.0.5",
     "redux-simple-router": "^2.0.3",
     "style-loader": "^0.13.0",
-    "webpack": "^2.0.2-beta"
+    "webpack": "^1.12.12"
   }
 }
