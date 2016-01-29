@@ -26,6 +26,21 @@ git clone https://github.com/werein/react.git
 
 Current production size is below 200kb
 
+## Deployment
+
+### Surge.sh
+
+___Prefered way___
+
+* `npm i -g surge`
+* `npm run surge`
+
+
+### Heroku
+
+Heroku works out of the box, just use "deploy to heroku" button
+
+
 ### Tools
 This project works with ReduxDevtool extension for chrome. [Read more](https://github.com/zalmoxisus/redux-devtools-extension)
 
