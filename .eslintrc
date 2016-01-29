@@ -1,9 +1,14 @@
 {
+  "parser": "babel-eslint",
   "extends": "airbnb",
   "rules": {
     "comma-dangle": 0
   },
   "globals": {
-    "__DEV__": true
+    "__DEV__": true,
+    "expect": true
+  },
+  "env": {
+    "mocha": true
   }
 }
