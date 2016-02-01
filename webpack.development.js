@@ -17,7 +17,7 @@ module.exports = {
     filename: '[hash].js',
     path: `${__dirname}/dist`
   },
-  devtool: 'eval',
+  devtool: 'source-map',
   debug: true,
   plugins: [stylesheetsPlugin, htmlWebpackPlugin, definePlugin],
   module: {
