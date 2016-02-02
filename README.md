@@ -24,7 +24,7 @@ git clone https://github.com/werein/react.git
 
 ## Production
 
-Current production size is below 200kb
+Current production size is 196kb and 54.6kb gziped.
 
 ## Deployment
 

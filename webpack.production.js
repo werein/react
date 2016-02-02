@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
 
 const stylesheetsLoader = ExtractTextPlugin.extract('style-loader',
   '!css-loader?modules&localIdentName=[hash:base64]');
@@ -14,6 +15,7 @@ const definePlugin = new webpack.DefinePlugin({
 });
 const dedupePlugin = new webpack.optimize.DedupePlugin();
 const uglifyPlugin = new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false } });
+const compressionPlugin = new CompressionPlugin();
 
 module.exports = {
   context: `${__dirname}/src`,
@@ -24,7 +26,14 @@ module.exports = {
   },
   devtool: 'cheap-source-map',
   debug: false,
-  plugins: [stylesheetsPlugin, htmlWebpackPlugin, definePlugin, dedupePlugin, uglifyPlugin],
+  plugins: [
+    stylesheetsPlugin,
+    htmlWebpackPlugin,
+    definePlugin,
+    dedupePlugin,
+    uglifyPlugin,
+    compressionPlugin
+  ],
   module: {
     loaders: [
       {
