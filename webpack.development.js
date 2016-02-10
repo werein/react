@@ -31,7 +31,8 @@ module.exports = {
       { test: /\.scss$/, loader: `${stylesheetsLoader}'!sass` },
       { test: /\.sass$/, loader: `${stylesheetsLoader}'!sass?indentedSyntax=sass` },
       { test: /\.less$/, loader: `${stylesheetsLoader}'!less` },
-      { test: /\.html$/, loader: 'html-loader' }
+      { test: /\.html$/, loader: 'html-loader' },
+      { test: /\.(png|jpg|svg)$/, loader: 'file?name=/images/[name]-[hash].[ext]' }
     ]
   },
   devServer: {

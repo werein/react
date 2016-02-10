@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import styles from './app.css';
 import { loadApp } from '../actions/app';
+import logo from './images/logo.png';
 
 export class App extends Component {
   componentDidMount() {
@@ -10,7 +11,9 @@ export class App extends Component {
 
   render() {
     return (
-      <div className={styles.container}></div>
+      <div className={styles.container}>
+        <img src={logo} />
+      </div>
     );
   }
 }
