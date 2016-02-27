@@ -34,6 +34,9 @@ module.exports = {
     uglifyPlugin,
     compressionPlugin
   ],
+  resolve: {
+    modulesDirectories: ['node_modules', `${__dirname}/src`]
+  },
   module: {
     loaders: [
       {
