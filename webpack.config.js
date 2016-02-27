@@ -20,6 +20,9 @@ module.exports = {
   devtool: 'source-map',
   debug: true,
   plugins: [stylesheetsPlugin, htmlWebpackPlugin, definePlugin],
+  resolve: {
+    modulesDirectories: ['node_modules', `${__dirname}/src`]
+  },
   module: {
     loaders: [
       {

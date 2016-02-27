@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "webpack-dev-server --config ./webpack.development.js  --progress --inline --hot",
+    "start": "webpack-dev-server --progress --inline --hot",
     "test": "NODE_ENV=test karma start karma.conf.js",
     "postinstall": "npm run build",
     "build": "NODE_ENV=production webpack --config ./webpack.production.js --progress --profile --colors",

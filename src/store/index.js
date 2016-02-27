@@ -3,7 +3,7 @@
 // Redux utility functions
 import { compose, createStore, combineReducers, applyMiddleware } from 'redux';
 // Import all reducers
-import * as reducers from '../reducers';
+import * as reducers from 'reducers';
 // Import SimpleReduxRouter
 import { syncHistory, routeReducer } from 'react-router-redux';
 import { browserHistory } from 'react-router';
