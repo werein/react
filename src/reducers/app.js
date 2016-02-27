@@ -1,4 +1,4 @@
-import { APP_LOAD } from '../constants/action-types';
+import { APP_LOAD } from 'constants/action-types';
 
 const initialState = {
   loaded: false,

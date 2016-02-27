@@ -61,6 +61,7 @@ module.exports = function (config) {
         ]
       },
       resolve: {
+        modulesDirectories: ['node_modules', `${__dirname}/src`],
         alias: {
           sinon: 'sinon/pkg/sinon'
         }
