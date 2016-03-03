@@ -45,14 +45,7 @@ module.exports = function (config) {
           {
             test: /\.js$/,
             exclude: /node_modules/,
-            loader: 'babel',
-            query: {
-              presets: ['react', 'es2015', 'stage-0']
-            }
-          },
-          {
-            test: /sinon\.js$/,
-            loader: 'imports?define=>false,require=>false'
+            loader: 'babel'
           },
           {
             test: /\.(css|scss|sass|less)$/,
@@ -61,17 +54,12 @@ module.exports = function (config) {
         ]
       },
       resolve: {
-        modulesDirectories: ['node_modules', `${__dirname}/src`],
-        alias: {
-          sinon: 'sinon/pkg/sinon'
-        }
+        modulesDirectories: ['node_modules', `${__dirname}/src`]
       },
       externals: {
-        jsdom: 'window',
         cheerio: 'window',
         'react/lib/ExecutionEnvironment': true,
-        'react/lib/ReactContext': 'window',
-        'text-encoding': 'window'
+        'react/lib/ReactContext': true
       }
     },
 
