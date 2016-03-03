@@ -4,7 +4,8 @@
   "description": "",
   "scripts": {
     "start": "webpack-dev-server --progress --inline --hot",
-    "test": "NODE_ENV=test karma start karma.conf.js",
+    "test": "NODE_ENV=test karma start karma.conf.js --single-run",
+    "test:watch": "NODE_ENV=test karma start karma.conf.js",
     "postinstall": "npm run build",
     "build": "NODE_ENV=production webpack --config ./webpack.production.js --progress --profile --colors",
     "surge": "rm -rf dist && npm run build && cp dist/index.html dist/200.html && surge dist",
@@ -29,6 +30,7 @@
     "karma": "^0.13.21",
     "karma-chai": "^0.1.0",
     "karma-mocha": "^0.2.2",
+    "karma-mocha-reporter": "^1.2.3",
     "karma-phantomjs-launcher": "^1.0.0",
     "karma-webpack": "^1.7.0",
     "mocha": "^2.4.5",
