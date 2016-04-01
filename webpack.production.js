@@ -21,6 +21,7 @@ module.exports = {
   context: `${__dirname}/src`,
   entry: './index',
   output: {
+    publicPath: '/',
     filename: '[hash].js',
     path: `${__dirname}/dist`
   },
