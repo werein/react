@@ -19,7 +19,7 @@ module.exports = {
   debug: true,
   plugins: [htmlWebpackPlugin, definePlugin],
   resolve: {
-    modulesDirectories: ['node_modules', `${__dirname}/src`]
+    root: `${__dirname}/src`
   },
   module: {
     loaders: [

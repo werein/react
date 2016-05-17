@@ -36,7 +36,7 @@ module.exports = {
     compressionPlugin
   ],
   resolve: {
-    modulesDirectories: ['node_modules', `${__dirname}/src`]
+    root: `${__dirname}/src`
   },
   module: {
     loaders: [
