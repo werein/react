@@ -4,6 +4,11 @@ import styles from './app.css';
 import { loadApp } from 'actions/app';
 
 export class App extends Component {
+  static propTypes = {
+    dispatch: PropTypes.func,
+    loaded: PropTypes.bool
+  };
+
   componentDidMount() {
     this.props.dispatch(loadApp());
   }
@@ -15,9 +20,10 @@ export class App extends Component {
   }
 }
 
-App.propTypes = {
-  dispatch: PropTypes.func,
-  loaded: PropTypes.bool
-};
+function mapStateToProperties(state) {
+  return {
+    loaded: state.app.loaded
+  };
+}
 
-export default connect(state => ({ ...state, loaded: state.app.loaded }))(App);
+export default connect(mapStateToProperties)(App);
