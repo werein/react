@@ -4,6 +4,7 @@
   "description": "",
   "scripts": {
     "start": "webpack-dev-server --progress --inline --hot",
+    "desktop": "electron -r babel-register desktop.js",
     "test": "NODE_ENV=test karma start karma.conf.js --single-run",
     "test:watch": "NODE_ENV=test karma start karma.conf.js",
     "postinstall": "npm run build",
