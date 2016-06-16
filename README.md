@@ -26,6 +26,16 @@ git clone https://github.com/werein/react.git
 
 Current production size is 196kb and 54.6kb gziped.
 
+## Desktop version
+
+This stack is pre-backed to be develop a desktop application.
+
+  * Install electron `npm i electron-prebuilt --save-dev`
+  * Run dev server `npm start`
+  * Run desktop application `npm run desktop`
+
+The setup is completely the same, only difference is that it is not running in browser, but as desktop application.
+
 ## Deployment
 
 ### Surge.sh
