@@ -10,11 +10,18 @@ Start a new application easily with all necessary tools
 * Redux
 * Webpack
 * Babel 6
+* CSS modules
 * Redux Router
 * Redux DevTools
 * Eslint
 * Enzyme powered by karma w Mocha & Chai
 * Express
+
+And optional (just install missing dependencies):
+
+* Sass/SCSS - `npm i node-sass sass-loader --save`
+* Electron - `npm i electron-prebuilt --save-dev`
+* Surge - `npm i surge -g`
 
 ## Installation
 
@@ -30,7 +37,7 @@ Current production size is 196kb and 54.6kb gziped.
 
 This stack is pre-backed to be develop a desktop application.
 
-  * Install electron `npm i electron-prebuilt --save-dev`
+  * Don't forge to install electron `npm i electron-prebuilt --save-dev`
   * Run dev server `npm start`
   * Run desktop application `npm run desktop`
 
@@ -38,12 +45,12 @@ The setup is completely the same, only difference is that it is not running in b
 
 ## Deployment
 
-### Surge.sh
+### Surge.sh ___Prefered way___
 
-___Prefered way___
+Simple, single-command web publishing. Publish HTML, CSS, and JS for free, without leaving the command line.
 
-* `npm i -g surge`
-* `npm run surge`
+  * Don't forge to install Surge `npm i surge -g`
+  * Run deployment command - `npm run surge`
 
 
 ### Heroku
