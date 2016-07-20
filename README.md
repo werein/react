@@ -1,6 +1,6 @@
 # React
 
-[![Build Status](https://travis-ci.org/werein/react.svg)](https://travis-ci.org/werein/react) [![Code Climate](https://codeclimate.com/github/werein/react/badges/gpa.svg)](https://codeclimate.com/github/werein/react)
+[![Build Status](https://travis-ci.org/werein/react.svg)](https://travis-ci.org/werein/react)[![Windows Build Status](https://ci.appveyor.com/api/projects/status/github/werein/react?branch=master&svg=true)](https://ci.appveyor.com/project/jirikolarik/react) [![Code Climate](https://codeclimate.com/github/werein/react/badges/gpa.svg)](https://codeclimate.com/github/werein/react)
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
