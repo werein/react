@@ -1,3 +1,4 @@
+const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -18,12 +19,12 @@ const uglifyPlugin = new webpack.optimize.UglifyJsPlugin({ compress: { warnings:
 const compressionPlugin = new CompressionPlugin();
 
 module.exports = {
-  context: `${__dirname}/src`,
+  context: path.join(__dirname, 'src'),
   entry: './index',
   output: {
     publicPath: '/',
     filename: '[hash].js',
-    path: `${__dirname}/dist`
+    path: path.join(__dirname, 'dist')
   },
   devtool: 'cheap-source-map',
   debug: false,
@@ -36,7 +37,7 @@ module.exports = {
     compressionPlugin
   ],
   resolve: {
-    root: `${__dirname}/src`
+    root: path.join(__dirname, 'src')
   },
   module: {
     loaders: [

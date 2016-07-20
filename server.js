@@ -1,14 +1,15 @@
+const path = require('path');
 const express = require('express');
 
 const app = express();
 
 const port = process.env.PORT ? process.env.PORT : 8080;
-const dist = `${__dirname}/dist`;
+const dist = path.join(__dirname, 'dist');
 
 app.use(express.static(dist));
 
 app.get('*', (req, res) => {
-  res.sendFile(`${__dirname}/index.html`);
+  res.sendFile(path.join(dist, 'index.html'));
 });
 
 app.listen(port, (error) => {

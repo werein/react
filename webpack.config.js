@@ -1,3 +1,4 @@
+const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -9,17 +10,16 @@ const definePlugin = new webpack.DefinePlugin({
 });
 
 module.exports = {
-  context: `${__dirname}/src`,
+  context: path.join(__dirname, 'src'),
   entry: './index',
   output: {
     filename: '[hash].js',
-    path: `${__dirname}/dist`
   },
   devtool: 'source-map',
   debug: true,
   plugins: [htmlWebpackPlugin, definePlugin],
   resolve: {
-    root: `${__dirname}/src`
+    root: path.join(__dirname, 'src')
   },
   module: {
     loaders: [

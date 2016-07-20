@@ -5,10 +5,10 @@
   "scripts": {
     "start": "webpack-dev-server --progress --inline --hot",
     "desktop": "electron -r babel-register desktop.js",
-    "test": "NODE_ENV=test karma start karma.conf.js --single-run",
-    "test:watch": "NODE_ENV=test karma start karma.conf.js",
+    "test": "cross-env NODE_ENV=test karma start karma.conf.js --single-run",
+    "test:watch": "cross-env NODE_ENV=test karma start karma.conf.js",
     "postinstall": "npm run build",
-    "build": "NODE_ENV=production webpack --config ./webpack.production.js --progress --profile --colors",
+    "build": "cross-env NODE_ENV=production webpack --config ./webpack.production.js --progress --profile --colors",
     "surge": "rm -rf dist && npm run build && cp dist/index.html dist/200.html && surge dist",
     "production": "node server",
     "eslint": "eslint ."
@@ -23,6 +23,7 @@
     "babel-eslint": "^6.0.4",
     "babel-plugin-react-transform": "^2.0.2",
     "chai": "^3.5.0",
+    "cross-env": "^2.0.0",
     "enzyme": "^2.3.0",
     "eslint": "^2.10.2",
     "eslint-config-airbnb": "^9.0.1",
