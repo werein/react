@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import styles from './app.css';
 import { loadApp } from 'actions/app';
+import styles from './app.css';
 
 export class App extends Component {
   static propTypes = {
@@ -15,7 +15,7 @@ export class App extends Component {
 
   render() {
     return (
-      <div className={styles.container}></div>
+      <div className={styles.container} />
     );
   }
 }

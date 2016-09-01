@@ -20,7 +20,6 @@ Start a new application easily with all necessary tools
 And optional (just install missing dependencies):
 
 * Sass/SCSS - `npm i node-sass sass-loader --save`
-* Electron - `npm i electron-prebuilt --save-dev`
 * Surge - `npm i surge -g`
 
 ## Installation
@@ -32,16 +31,6 @@ git clone https://github.com/werein/react.git
 ## Production
 
 Current production size is 196kb and 54.6kb gziped.
-
-## Desktop version
-
-This stack is pre-backed to be develop a desktop application.
-
-  * Don't forge to install electron `npm i electron-prebuilt --save-dev`
-  * Run dev server `npm start`
-  * Run desktop application `npm run desktop`
-
-The setup is completely the same, only difference is that it is not running in browser, but as desktop application.
 
 ## Deployment
 
