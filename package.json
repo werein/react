@@ -4,14 +4,15 @@
   "description": "",
   "scripts": {
     "start": "webpack-dev-server --progress --inline --hot",
+    "server": "babel-watch server",
+    "production": "babel-node server",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
     "postinstall": "npm run build",
+    "eslint": "eslint .",
     "build": "cross-env NODE_ENV=production webpack --config ./webpack.production.js --progress --profile --colors",
-    "surge": "rm -rf dist && npm run build && cp dist/index.html dist/200.html && surge dist",
-    "production": "node server",
-    "eslint": "eslint ."
+    "surge": "rm -rf dist && npm run build && cp dist/index.html dist/200.html && surge dist"
   },
   "engines": {
     "node": "6.6.0",
@@ -29,6 +30,7 @@
     "babel-eslint": "^7.0.0",
     "babel-jest": "^15.0.0",
     "babel-plugin-react-transform": "^2.0.2",
+    "babel-watch": "^2.0.3-rc0",
     "cross-env": "^3.0.0",
     "eslint": "^3.6.1",
     "eslint-config-airbnb": "^12.0.0",
@@ -47,6 +49,7 @@
   },
   "dependencies": {
     "babel": "^6.5.2",
+    "babel-cli": "^6.16.0",
     "babel-core": "^6.16.0",
     "babel-loader": "^6.2.5",
     "babel-polyfill": "^6.16.0",

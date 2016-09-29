@@ -3,7 +3,7 @@ const express = require('express');
 
 const app = express();
 
-const port = process.env.PORT ? process.env.PORT : 8080;
+const port = process.env.PORT ? process.env.PORT : 8181;
 const dist = path.join(__dirname, 'dist');
 
 app.use(express.static(dist));
