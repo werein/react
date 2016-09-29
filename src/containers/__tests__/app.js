@@ -9,7 +9,7 @@ describe('<App />', () => {
   });
 
   it('renders <App /> container', () => {
-    const wrapper = shallow(<App loaded={true} />);
+    const wrapper = shallow(<App loaded />);
     expect(wrapper.find('div').length).toBe(1);
   });
 });

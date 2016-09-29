@@ -1,11 +1,14 @@
 import React from 'react';
-import { Route } from 'react-router';
+import { BrowserRouter, Match } from 'react-router';
+import { default as Layout } from 'containers/layout';
 import { default as App } from 'containers/app';
 
 export const routes = (
-  <Route>
-    <Route path="/" component={App} />
-  </Route>
+  <BrowserRouter>
+    <Layout>
+      <Match exactly pattern="/" component={App} />
+    </Layout>
+  </BrowserRouter>
 );
 
 export default routes;
