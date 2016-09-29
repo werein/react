@@ -14,8 +14,8 @@
     "eslint": "eslint ."
   },
   "engines": {
-    "node": "5.0.0",
-    "npm": "3.3.6"
+    "node": "6.6.0",
+    "npm": "3.10.3"
   },
   "jest": {
     "moduleDirectories": ["node_modules", "src"],
