@@ -14,6 +14,10 @@ export class App extends Component {
   }
 
   render() {
+    if (!this.props.loaded) {
+      return null;
+    }
+
     return (
       <div className={styles.container} />
     );
