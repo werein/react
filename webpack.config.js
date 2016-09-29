@@ -38,7 +38,7 @@ module.exports = {
   devServer: {
     historyApiFallback: true,
     proxy: {
-      '*': 'http://localhost:8181'
+      '/api*': 'http://localhost:8181'
     }
   }
 };
