@@ -5,3 +5,5 @@ export function loadApp() {
     type: APP_LOAD,
   };
 }
+
+export default { loadApp };
