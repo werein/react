@@ -1,17 +1,19 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { loadApp } from 'actions/app';
 import styles from './app.css';
 
-export class App extends Component {
-  static propTypes = {
-    dispatch: PropTypes.func,
-    loaded: PropTypes.bool
-  };
+type Props = {
+  dispatch: () => void,
+  loaded: boolean
+}
 
+export class AppContainer extends Component {
   componentDidMount() {
     this.props.dispatch(loadApp());
   }
+
+  props: Props;
 
   render() {
     if (!this.props.loaded) {
@@ -30,4 +32,4 @@ function mapStateToProperties(state) {
   };
 }
 
-export default connect(mapStateToProperties)(App);
+export default connect(mapStateToProperties)(AppContainer);

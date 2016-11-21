@@ -85,7 +85,7 @@ Included Express server is preconfigured to serve `/dist` folder. All you need t
 
 This is also good to run on your local computer to ensure, that your application is running as it should.
 
-_Current production size is 211kb and 57kb gziped_
+_Current production size is 208kb and 57kb gziped_
 
 ## Deployment
 
