@@ -1,14 +1,16 @@
 import React from 'react';
-import { BrowserRouter, Match } from 'react-router';
+import { Match } from 'react-router';
+import { ConnectedRouter } from 'connected-react-router';
+import { history } from 'store/index';
 import Layout from 'containers/layout';
 import App from 'containers/app';
 
 const routes = (
-  <BrowserRouter>
+  <ConnectedRouter history={history}>
     <Layout>
       <Match exactly pattern="/" component={App} />
     </Layout>
-  </BrowserRouter>
+  </ConnectedRouter>
 );
 
 export default routes;
