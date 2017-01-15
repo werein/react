@@ -8,7 +8,7 @@ Extremely simple boilerplate, __easiest you can find__, for React application in
 
 * React
 * Redux
-* Webpack
+* Webpack 2
 * Babel 6
 * CSS modules
 * React Router
