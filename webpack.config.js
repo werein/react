@@ -16,17 +16,16 @@ module.exports = {
     filename: '[hash].js',
   },
   devtool: 'source-map',
-  debug: true,
   plugins: [htmlWebpackPlugin, definePlugin],
   resolve: {
-    root: path.join(__dirname, 'src')
+    modules: ['node_modules', path.join(__dirname, 'src')]
   },
   module: {
     loaders: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel'
+        loader: 'babel-loader'
       },
       { test: /\.css$/, loader: stylesheetsLoader },
       { test: /\.scss$/, loader: `${stylesheetsLoader}'!sass` },
