@@ -5,14 +5,14 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
 
 const stylesheetsLoaders = [{
-  loader: "css-loader",
-    options: {
-      modules: true,
-      localIdentName: '[path]-[local]-[hash:base64:3]',
-      sourceMap: true
-    }
+  loader: 'css-loader',
+  options: {
+    modules: true,
+    localIdentName: '[path]-[local]-[hash:base64:3]',
+    sourceMap: true
   }
-]
+}
+];
 
 const stylesheetsPlugin = new ExtractTextPlugin('[hash].css');
 const htmlWebpackPlugin = new HtmlWebpackPlugin({ template: 'index.html' });
