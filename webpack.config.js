@@ -8,15 +8,15 @@ const definePlugin = new webpack.DefinePlugin({
 });
 
 const stylesheetsLoaders = [
-  { loader: "style-loader" },
-  { loader: "css-loader",
+  { loader: 'style-loader' },
+  { loader: 'css-loader',
     options: {
       modules: true,
       localIdentName: '[path]-[local]-[hash:base64:3]',
       sourceMap: true
     }
   }
-]
+];
 
 module.exports = {
   context: path.join(__dirname, 'src'),

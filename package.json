@@ -25,7 +25,8 @@
     ],
     "moduleNameMapper": {
       "^.+\\.(css)$": "identity-obj-proxy"
-    }
+    },
+    "setupTestFrameworkScriptFile": "<rootDir>/src/test/setup.js"
   },
   "author": "We're in <wereinhq.com>",
   "license": "ISC",
@@ -35,16 +36,18 @@
     "babel-plugin-react-transform": "^3.0.0",
     "babel-watch": "^2.0.7",
     "cross-env": "^5.0.5",
+    "enzyme-adapter-react-16": "^1.0.0",
     "eslint": "^4.8.0",
     "eslint-config-airbnb": "^15.1.0",
     "eslint-import-resolver-webpack": "^0.8.3",
     "eslint-plugin-import": "^2.7.0",
-    "eslint-plugin-jsx-a11y": "6.0.2",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-react": "^7.4.0",
     "identity-obj-proxy": "^3.0.0",
     "imports-loader": "^0.7.1",
     "jest-cli": "^21.2.1",
     "react-addons-test-utils": "^15.6.2",
+    "react-test-renderer": "^16.0.0",
     "react-transform-catch-errors": "^1.0.2",
     "react-transform-hmr": "^1.0.4",
     "redbox-react": "^1.5.0",
