@@ -53,7 +53,7 @@ Application has very few dependencies, so it’s most probably very easy to unde
 ### Start front-end React application
 Application is divided into two parts. One is pure React front-end, powered by `webpack-dev-server` in development mode.
 
-To start this application run command bellow and open your app on `http://localhost:8080`
+To start this application run command below and open your app on `http://localhost:8080`
 
 ```javascript
 npm start
@@ -66,7 +66,7 @@ To test your application, run
 
 If you don’t plan to connect to your own backend, you should be just fine
 
-### Start Express  back-end
+### Start Express back-end
 Second part of this application is back end written in Express. This is a place, where you provide API for front-end or/and server yours production application.
 
 To start backend server, run npm command bellow and open `http://localhost:8181`
