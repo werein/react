@@ -1,0 +1,2 @@
+[options]
+module.name_mapper='^\(actions\|components\|constants\|containers\|reducers\|sagas\|store\|test\)\/\(.*\)$' -> '<PROJECT_ROOT>/src/\1/\2'
