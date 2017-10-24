@@ -15,8 +15,8 @@
     "surge": "rm -rf dist && npm run build && cp dist/index.html dist/200.html && surge dist"
   },
   "engines": {
-    "node": "6.6.0",
-    "npm": "3.10.3"
+    "node": "^6.6.0",
+    "npm": "^3.10.3"
   },
   "jest": {
     "moduleDirectories": [
