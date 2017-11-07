@@ -1,7 +1,9 @@
 language: node_js
+before_install:
+  - npm i flow-typed -g
 node_js:
-  - "6"
+  - "8"
 script:
-  - npm test
+  - yarn test
 after_script:
-  - npm run eslint
+  - yarn run eslint
