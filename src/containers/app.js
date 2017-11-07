@@ -3,6 +3,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { loadApp } from 'actions/app';
+import type { MapStateToProps } from 'react-redux';
 import type { Dispatch } from 'actions/index';
 import type { State } from 'reducers/index';
 import styles from './app.css';
@@ -35,10 +36,8 @@ export class AppContainer extends Component<Props> {
   }
 }
 
-function mapStateToProperties(state: State) {
-  return {
-    loaded: state.app.loaded
-  };
-}
+const mapStateToProps: MapStateToProps<State, {}, StateProps> = (state) => ({
+  loaded: state.app.loaded
+});
 
-export default connect(mapStateToProperties)(AppContainer);
+export default connect(mapStateToProps)(AppContainer);

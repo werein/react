@@ -6,7 +6,7 @@ import type { AppState } from './app';
 export { default as app } from './app';
 
 export type State = {
-  app: AppState
+  +app: AppState
 };
 
 export type Store = {
