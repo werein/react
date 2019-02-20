@@ -14,10 +14,6 @@
     "build": "cross-env NODE_ENV=production webpack --config ./webpack.production.js --progress --profile --colors",
     "surge": "rm -rf dist && npm run build && cp dist/index.html dist/200.html && surge dist"
   },
-  "engines": {
-    "node": ">=6.6.0",
-    "npm": "=>3.10.3"
-  },
   "jest": {
     "moduleDirectories": [
       "node_modules",
