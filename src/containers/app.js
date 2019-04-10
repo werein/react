@@ -1,22 +1,32 @@
+// @flow
+
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { loadApp } from 'actions/app';
+import type { MapStateToProps } from 'react-redux';
+import type { Dispatch } from 'actions/index';
+import type { State } from 'reducers/index';
 import styles from './app.css';
 
-type Props = {
-  dispatch: () => void,
+type StateProps = {
   loaded: boolean
 }
 
-export class AppContainer extends Component {
+type Props = StateProps & {
+  dispatch: Dispatch
+}
+
+export class AppContainer extends Component<Props> {
   componentDidMount() {
-    this.props.dispatch(loadApp());
+    const { dispatch } = this.props;
+
+    dispatch(loadApp());
   }
 
-  props: Props;
-
   render() {
-    if (!this.props.loaded) {
+    const { loaded } = this.props;
+
+    if (!loaded) {
       return null;
     }
 
@@ -26,10 +36,8 @@ export class AppContainer extends Component {
   }
 }
 
-function mapStateToProperties(state) {
-  return {
-    loaded: state.app.loaded
-  };
-}
+const mapStateToProps: MapStateToProps<State, {}, StateProps> = (state) => ({
+  loaded: state.app.loaded
+});
 
-export default connect(mapStateToProperties)(AppContainer);
+export default connect(mapStateToProps)(AppContainer);

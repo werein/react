@@ -6,3 +6,6 @@ dist
 
 # Ignore logs
 npm-debug.log
+
+# Ignore flow
+flow-typed

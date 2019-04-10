@@ -1,3 +1,5 @@
+// @flow
+
 import React from 'react';
 import { Switch, Route } from 'react-router';
 import { ConnectedRouter } from 'connected-react-router';
